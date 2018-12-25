@@ -14,9 +14,14 @@
   },
   "devDependencies": {
     "dvan": "^2.1.1",
+    "eslint": "^5.11.0",
+    "husky": "^1.2.1",
+    "lint-staged": "^8.1.0",
     "node-sass": "^4.11.0",
+    "prettier": "^1.15.3",
     "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.5.21",
+    "xo": "^0.23.0"
   },
   "dependencies": {
     "marked": "^0.5.2",
@@ -24,5 +29,32 @@
     "vue": "^2.5.21",
     "vue-router": "^3.0.2",
     "vuex": "^3.0.1"
+  },
+  "lint-staged": {
+    "*.js": [
+      "xo --fix",
+      "git add"
+    ],
+    "ignore": [
+      "__test__",
+      "dist"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "xo": {
+    "space": true,
+    "prettier": true,
+    "rules": {
+      "camelcase": 0,
+      "array-callback-return": 1,
+      "import/no-extraneous-dependencies": 0,
+      "import/no-unresolved": 0,
+      "unicorn/filename-case": 0,
+      "unicorn/no-abusive-eslint-disable": 0
+    }
   }
 }
