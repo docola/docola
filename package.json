@@ -51,7 +51,9 @@
     "rules": {
       "camelcase": 0,
       "array-callback-return": 1,
+      "import/extensions": 0,
       "import/no-extraneous-dependencies": 0,
+      "import/no-unassigned-import": 0,
       "import/no-unresolved": 0,
       "unicorn/filename-case": 0,
       "unicorn/no-abusive-eslint-disable": 0

@@ -1,3 +1,5 @@
+/* global window, fetch */
+
 import Vue from 'vue'
 import Vuex from 'vuex'
 import marked from 'marked'
@@ -5,7 +7,7 @@ import markedRenderer from '../utils/markedRenderer'
 
 Vue.use(Vuex)
 
-export default ({fetchPrefix, title}) => {
+export default ({ fetchPrefix, title }) => {
   const store = new Vuex.Store({
     state: {
       title,
@@ -23,9 +25,11 @@ export default ({fetchPrefix, title}) => {
 
     actions: {
       fetchFile({ commit }, path) {
-        fetch(`${fetchPrefix || ''}${
-          path.endsWith('/') ? `${path}readme` : path
-        }.md`)
+        fetch(
+          `${fetchPrefix || ''}${
+            path.endsWith('/') ? `${path}readme` : path
+          }.md`
+        )
           .then(r => r.text())
           .then(md => {
             const page = {}

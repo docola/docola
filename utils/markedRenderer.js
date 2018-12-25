@@ -1,7 +1,7 @@
 import marked from 'marked'
 
 export default page => {
-  const renderer = new marked.Renderer
+  const renderer = new marked.Renderer()
 
   renderer.heading = (text, lv) => {
     if (lv === 1) {

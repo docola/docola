@@ -1,3 +1,5 @@
+/* global window */
+
 import Vue from 'vue'
 import Root from './views/Root'
 import createRouter from './router'
