@@ -1,0 +1,13 @@
+@import 'vars.css';
+
+body {
+  margin: 0;
+}
+
+.Wrap {
+  max-width: 1060px;
+}
+
+.Wrap.Center {
+  margin: 0 auto;
+}

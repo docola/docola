@@ -1,0 +1,28 @@
+{
+  "name": "docola",
+  "version": "0.0.0",
+  "main": "dist/docola.js",
+  "author": "evila <ijoec123@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "!__test__"
+  ],
+  "scripts": {
+    "lib": "dvan --config build/lib.config.js",
+    "dev": "yarn lib --dev --html.template __test__/index.html --public-folder __test__/public",
+    "build": "yarn lib --prod"
+  },
+  "devDependencies": {
+    "dvan": "^2.1.1",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.5.21"
+  },
+  "dependencies": {
+    "marked": "^0.5.2",
+    "milligram": "^1.3.0",
+    "vue": "^2.5.21",
+    "vue-router": "^3.0.2",
+    "vuex": "^3.0.1"
+  }
+}
