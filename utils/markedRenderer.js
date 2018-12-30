@@ -3,13 +3,14 @@ import marked from 'marked'
 export default page => {
   const renderer = new marked.Renderer()
 
-  renderer.heading = (text, lv) => {
-    if (lv === 1) {
-      page.title = text
-    }
+  renderer.heading = (text, level) => {
+    page.headings.push(text)
 
-    return `<h${lv}>${text}</h${lv}>`
+    return `<h${level}>${text}</h${level}>`
   }
+
+  renderer.link = (href, title, text) =>
+    `<Link to="${href}" title="${title}">${text}</Link>`
 
   return renderer
 }
