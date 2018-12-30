@@ -10,7 +10,7 @@ Hello, it's me.
 </template>
 ```
 
-[intro](#/intro)
+[intro](intro)
 ```html
 <template>
   <div></div>
