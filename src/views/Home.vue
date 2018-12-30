@@ -3,21 +3,25 @@
     <Header />
 
     <div class="Wrap Center">
+      <Sidebar />
       <div class="Main">
         <component :is="MarkdownBody" />
       </div>
     </div>
+
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header'
+import Sidebar from '@/components/Sidebar'
 
 export default {
   name: 'Page',
 
   components: {
-    Header
+    Header,
+    Sidebar
   },
 
   computed: {
@@ -44,13 +48,14 @@ export default {
       if (path === '/') {
         document.title = title
       } else {
-        document.title = `${page.title} - ${title}`
+        document.title = `${page.title || path} - ${title}`
       }
     }
   },
 
   mounted() {
     this.fetchFile(this.$route.path)
+    this.$store.commit('SET_TITLE', this.$store.state.title)
   },
 
   beforeRouteUpdate({ path }, { path: fromPath }, next) {
@@ -71,7 +76,14 @@ export default {
 <style scoped>
 .Main {
   margin-top: var(--header-height);
-  padding: 40px 20px;
-  width: 100%;
+  padding: 30px 20px 30px 80px;
+  margin-left: var(--sidebar-width);
+}
+
+@media screen and (max-width: 768px) {
+  .Main {
+    margin-left: 0;
+    padding-left: 20px;
+  }
 }
 </style>
