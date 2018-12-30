@@ -1,4 +1,4 @@
-import 'milligram/src/milligram.sass'
+import '@/css/milligram/milligram.sass'
 import '@/css/global.css'
 
 export default {
