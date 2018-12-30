@@ -20,7 +20,7 @@
 .Sidebar-toggle svg {
   width: 3rem;
   height: 3rem;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 @media screen and (min-width: 769px) {
