@@ -5,6 +5,12 @@ import Root from './views/Root'
 import createRouter from './router'
 import createStore from './store'
 
+/**
+ * Global components
+ */
+import Link from './components/Link'
+Vue.component(Link.name, Link)
+
 class Docola {
   constructor(opts = {}) {
     this.opts = opts
@@ -19,8 +25,6 @@ class Docola {
       render: h => h(Root)
     })
   }
-
-  mount() {}
 }
 
 export default Docola
