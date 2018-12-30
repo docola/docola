@@ -7,19 +7,38 @@ import markedRenderer from '../utils/markedRenderer'
 
 Vue.use(Vuex)
 
-export default ({ fetchPrefix, title }) => {
+export default ({
+  fetchPrefix,
+  title = 'Docola',
+  sidebar = [],
+  nav = []
+}) => {
   const store = new Vuex.Store({
     state: {
       title,
       page: {
-        title: '',
-        html: ''
+        title: null,
+        html: '',
+        headings: []
+      },
+      sidebar,
+      nav,
+      mobileSidebar: {
+        active: false
       }
     },
 
     mutations: {
+      SET_TITLE(state, title) {
+        state.title = title
+      },
+
       SET_PAGE(state, page) {
         state.page = page
+      },
+
+      TOGGLE_SIDEBAR({ mobileSidebar }, val) {
+        mobileSidebar.active = typeof val === 'boolean' ? val : !mobileSidebar.active
       }
     },
 
@@ -33,9 +52,11 @@ export default ({ fetchPrefix, title }) => {
           .then(r => r.text())
           .then(md => {
             const page = {}
+            page.headings = []
             page.html = marked(md, {
               renderer: markedRenderer(page)
             })
+            page.title = page.headings[0]
             commit('SET_PAGE', page)
           })
       }
