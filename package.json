@@ -4,13 +4,19 @@
   "main": "dist/docola.js",
   "author": "evila <ijoec123@gmail.com>",
   "license": "MIT",
+  "homepage": "https://docola.evila.me",
+  "repository": {
+    "type": "git",
+    "url": "docola/docola.git"
+  },
   "files": [
     "!__test__"
   ],
   "scripts": {
     "lib": "dvan --config build/lib.config.js",
     "dev": "yarn lib --dev --html.template __test__/index.html --public-folder __test__/public",
-    "build": "yarn lib --prod"
+    "build": "yarn lib --prod",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "dvan": "^2.1.1",
