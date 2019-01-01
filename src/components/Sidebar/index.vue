@@ -7,6 +7,21 @@
       :class="{ 'MobileSidebar-active': mobileSidebarActive }"
     >
 
+      <!-- Move Navbar to Sidebar in Mobile device -->
+      <div class="MobileNavbar">
+        <div
+          v-for="({ title, link }, k) in $store.state.nav"
+          :key="k"
+        >
+          <router-link
+            class="MobileNavbarItem"
+            :to="link"
+          >
+            {{ title }}
+          </router-link>
+        </div>
+      </div>
+
       <div class="SidebarItems">
         <div
           class="SidebarItem"
@@ -65,7 +80,7 @@ export default {
   bottom: 0;
   top: var(--header-height);
   width: var(--sidebar-width);
-  padding: 30px 0;
+  padding: 30px 20px;
   box-shadow: 1px 0 0 var(--border-color);
   overflow-y: auto;
   background-color: var(--bg);
@@ -73,7 +88,6 @@ export default {
 }
 
 .SidebarItem {
-  padding: 0 20px;
   margin-bottom: 1.2rem;
   padding-bottom: 1.2rem;
 }
@@ -84,6 +98,16 @@ export default {
 
 .SidebarItem-link {
   display: block;
+}
+
+.MobileNavbar {
+  box-shadow: 0 1px 0 var(--border-color);
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+.MobileNavbarItem {
+  font-size: 2.2rem;
+  font-weight: 500;
 }
 
 @media screen and (max-width: 768px) {
