@@ -13,12 +13,12 @@
           v-for="({ title, link }, k) in $store.state.nav"
           :key="k"
         >
-          <router-link
+          <Link
             class="MobileNavbarItem"
             :to="link"
           >
             {{ title }}
-          </router-link>
+          </Link>
         </div>
       </div>
 
@@ -30,14 +30,14 @@
         >
           <h4 class="SidebarItem-title">{{ title }}</h4>
           <template v-if="links">
-            <router-link
+            <Link
               class="SidebarItem-link"
               v-for="({ title, link }, k) in links"
               :key="k"
               :to="link"
             >
               {{ title }}
-            </router-link>
+            </Link>
           </template>
         </div>
       </div>
@@ -119,6 +119,12 @@ export default {
 
   .MobileSidebar-active {
     left: 0;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .MobileNavbar {
+    display: none;
   }
 }
 </style>
