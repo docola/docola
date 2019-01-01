@@ -4,7 +4,7 @@
 
     <div
       class="Sidebar"
-      :class="{'MobileSidebar-active': mobileSidebarActive}"
+      :class="{ 'MobileSidebar-active': mobileSidebarActive }"
     >
 
       <div class="SidebarItems">
