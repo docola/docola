@@ -1,6 +1,6 @@
 {
   "name": "docola",
-  "version": "0.0.0",
+  "version": "0.20.19",
   "main": "dist/docola.js",
   "author": "evila <ijoec123@gmail.com>",
   "license": "MIT",
