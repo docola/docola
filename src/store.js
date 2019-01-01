@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import marked from 'marked'
-import markedRenderer from '../utils/markedRenderer'
+import markedRenderer from '../utils/marked/Renderer'
 
 Vue.use(Vuex)
 
