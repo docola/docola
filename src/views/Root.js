@@ -3,14 +3,15 @@ import '@/css/global.css'
 
 export default {
   name: 'DocolaRoot',
-  render: h =>
-    h(
+  render(h) {
+    return h(
       'div',
       {
         attrs: {
-          id: 'Docola'
+          id: this.$store.getters.el
         }
       },
       [h('router-view')]
     )
+  }
 }

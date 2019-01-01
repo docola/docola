@@ -8,6 +8,7 @@ import markedRenderer from '../utils/marked/Renderer'
 Vue.use(Vuex)
 
 export default ({
+  el,
   fetchPrefix,
   title = 'Docola',
   sidebar = [],
@@ -59,6 +60,14 @@ export default ({
             page.title = page.headings[0]
             commit('SET_PAGE', page)
           })
+      }
+    },
+
+    getters: {
+      el() {
+        if (!el) return 'Docola'
+        if (/^(#|\.)/.test(el)) return el.slice(1)
+        return el
       }
     }
   })
