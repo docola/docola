@@ -11,5 +11,6 @@ module.exports = {
   html: false,
   chainWebpack(config) {
     config.output.libraryExport('default')
+    config.resolve.alias.set('vue$', 'vue/dist/vue.esm')
   }
 }
