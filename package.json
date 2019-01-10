@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "lib": "dvan --config build/lib.config.js",
-    "dev": "yarn lib --dev --html.template __test__/index.html --public-folder __test__/public",
+    "dev": "yarn lib __test__/index.js --dev --html.template __test__/index.html --public-folder __test__/public",
     "build": "yarn lib --prod",
     "prepublishOnly": "npm run build"
   },
