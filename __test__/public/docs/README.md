@@ -2,6 +2,8 @@
 
 ## sub
 
+> blockquote
+
 Hello, it's me.
 
 ```html
@@ -10,95 +12,12 @@ Hello, it's me.
 </template>
 ```
 
+```ts
+interface config {
+  id?: number
+}
+```
+
 [intro](intro)
-```html
-<template>
-  <div></div>
-</template>
-```
 
-[intro](#/intro)
-```html
-<template>
-  <div></div>
-</template>
-```
-
-[intro](#/intro)
-```html
-<template>
-  <div></div>
-</template>
-```
-
-[intro](#/intro)
-```html
-<template>
-  <div></div>
-</template>
-```
-
-[intro](#/intro)
-```html
-<template>
-  <div></div>
-</template>
-```
-
-[intro](#/intro)
-```html
-<template>
-  <div></div>
-</template>
-```
-
-[intro](#/intro)
-```html
-<template>
-  <div></div>
-</template>
-```
-
-[intro](#/intro)
-```html
-<template>
-  <div></div>
-</template>
-```
-
-[intro](#/intro)
-```html
-<template>
-  <div></div>
-</template>
-```
-
-[intro](#/intro)
-```html
-<template>
-  <div></div>
-</template>
-```
-
-[intro](#/intro)
-```html
-<template>
-  <div></div>
-</template>
-```
-
-[intro](#/intro)
-```html
-<template>
-  <div></div>
-</template>
-```
-
-[intro](#/intro)
-```html
-<template>
-  <div></div>
-</template>
-```
-
-[intro](#/intro)
+Hi there, I am `code`.
