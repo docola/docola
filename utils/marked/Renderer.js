@@ -12,5 +12,10 @@ export default page => {
   renderer.link = (href, title, text) =>
     `<Link to="${href}" title="${title}">${text}</Link>`
 
+  /**
+   * TODO
+   * code renderer
+   */
+
   return renderer
 }
